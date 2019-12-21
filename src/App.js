@@ -1,25 +1,18 @@
 import React, { Component } from "react";
-import sudoku from "sudoku-umd";
+import { puzzleBoard, solvedBoard } from "./components/Engine";
 import Header from "./components/Header";
 import "./App.css";
 import GameBoard from "./components/GameBoard";
-
-const gameLevel = "hard";
-
-const rawPuzzleBoard = sudoku.generate(gameLevel);
-const rawSolvedBoard = sudoku.solve(rawPuzzleBoard);
-
-let puzzleBoard = Array.from(rawPuzzleBoard).map(field =>
-  field === "." ? (field = 0) : (field = field * 1)
-);
-
-let solvedBoard = Array.from(rawSolvedBoard).map(field => (field = field * 1));
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { puzzleBoard: puzzleBoard, solvedBoard: solvedBoard };
   }
+
+  digitInputed = e => {
+    console.log(e.target.id);
+  };
 
   render() {
     return (
@@ -28,6 +21,7 @@ class App extends Component {
         <GameBoard
           puzzleBoard={this.state.puzzleBoard}
           solvedBoard={this.state.solvedBoard}
+          digitInputed={this.digitInputed}
         />
       </div>
     );

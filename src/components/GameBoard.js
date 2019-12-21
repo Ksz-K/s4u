@@ -8,11 +8,15 @@ class GameBoard extends Component {
   //   };
 
   render() {
-    const { puzzleBoard, solvedBoard } = this.props;
+    const { puzzleBoard, solvedBoard, digitInputed } = this.props;
 
     return (
-      <div className="row gameFields">
-        <GameRow puzzleBoard={puzzleBoard} solvedBoard={solvedBoard} />
+      <div className="row align-content-around">
+        <div className="col"></div>
+        <div className="mt-5" style={{ width: "27rem" }}>
+          <GameRow puzzleBoard={puzzleBoard} digitInputed={digitInputed} />
+        </div>
+        <div className="col"></div>
       </div>
     );
   }
