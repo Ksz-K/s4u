@@ -1,0 +1,16 @@
+.field {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  text-align: center;
+}
+.field[readonly] {
+  background: #ccc;
+}
+
+.gameFields {
+  display: flex;
+  margin-top: 70px;
+  padding-left: calc(100vw - (100vw - 13.5rem));
+  padding-right: calc(100vw - (100vw - 13.5rem));
+}
