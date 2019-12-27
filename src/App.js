@@ -11,7 +11,12 @@ class App extends Component {
   }
 
   digitInputed = e => {
-    console.log(e.target.id);
+    const { id, value } = e.target;
+    if (value > 0 && value < 10) {
+      const puzzleboard = [...this.state.puzzleBoard];
+      puzzleBoard[id] = value.toString();
+      this.setState({ puzzleBoard });
+    }
   };
 
   render() {
