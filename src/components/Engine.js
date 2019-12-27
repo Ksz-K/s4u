@@ -1,7 +1,7 @@
 //import React, { Component } from "react";
+import React, { Component } from "react";
 import sudoku from "sudoku-umd";
-
-export const gameLevel = "hard";
+import { gameLevel } from "./Controls";
 
 export const rawPuzzleBoard = sudoku.generate(gameLevel);
 export const rawSolvedBoard = sudoku.solve(rawPuzzleBoard);

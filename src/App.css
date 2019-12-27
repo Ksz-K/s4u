@@ -14,3 +14,11 @@
   padding-left: calc(100vw - (100vw - 13.5rem));
   padding-right: calc(100vw - (100vw - 13.5rem));
 }
+
+.custom-width {
+  width: 78px !important;
+}
+
+button span {
+  pointer-events: none;
+}

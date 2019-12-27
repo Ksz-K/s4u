@@ -3,15 +3,11 @@ import GameRow from "./GameRow";
 //import PropTypes from 'prop-types'
 
 class GameBoard extends Component {
-  //   static propTypes = {
-  //     prop: PropTypes
-  //   };
-
   render() {
     const { puzzleBoard, solvedBoard, digitInputed } = this.props;
-
+    const nazwa = ""; //"d-none";
     return (
-      <div className="row align-content-around">
+      <div className={"row align-content-around " + nazwa}>
         <div className="col"></div>
         <div className="mt-5" style={{ width: "27rem" }}>
           <GameRow puzzleBoard={puzzleBoard} digitInputed={digitInputed} />

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { puzzleBoard, solvedBoard } from "./components/Engine";
 import Header from "./components/Header";
-import "./App.css";
+import Controls from "./components/Controls";
 import GameBoard from "./components/GameBoard";
-
+import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +23,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
+        <Controls />
         <GameBoard
           puzzleBoard={this.state.puzzleBoard}
           solvedBoard={this.state.solvedBoard}
