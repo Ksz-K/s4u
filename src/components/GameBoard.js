@@ -10,7 +10,11 @@ class GameBoard extends Component {
       <div className={"row align-content-around " + nazwa}>
         <div className="col"></div>
         <div className="mt-5" style={{ width: "27rem" }}>
-          <GameRow puzzleBoard={puzzleBoard} digitInputed={digitInputed} />
+          <GameRow
+            puzzleBoard={puzzleBoard}
+            solvedBoard={solvedBoard}
+            digitInputed={digitInputed}
+          />
         </div>
         <div className="col"></div>
       </div>

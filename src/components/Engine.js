@@ -1,7 +1,14 @@
-//import React, { Component } from "react";
+/* //import React, { Component } from "react";
 import React, { Component } from "react";
 import sudoku from "sudoku-umd";
 import { gameLevel } from "./Controls";
+
+console.log(gameLevel);
+export default class Engine extends Component {
+  render() {
+    return <div></div>;
+  }
+}
 
 export const rawPuzzleBoard = sudoku.generate(gameLevel);
 export const rawSolvedBoard = sudoku.solve(rawPuzzleBoard);
@@ -13,3 +20,4 @@ export const puzzleBoard = Array.from(rawPuzzleBoard).map(field =>
 export const solvedBoard = Array.from(rawSolvedBoard).map(
   field => (field = field * 1)
 );
+ */
