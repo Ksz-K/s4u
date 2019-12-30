@@ -72,7 +72,10 @@ class Controls extends Component {
   render() {
     return (
       <div className="btn-toolbar mt-3" role="toolbar">
-        <div className="btn-group mx-auto" role="group">
+        <div
+          className="btn-group mx-auto justify-content-centered"
+          role="group"
+        >
           <button
             type="button"
             className="btn btn-secondary"
@@ -80,7 +83,7 @@ class Controls extends Component {
             disabled
           >
             Digits to be shown ? <br></br>
-            <span className="font-italic">Game Level</span>
+            <span className="font-italic d-none d-sm-block">Game Level</span>
           </button>
           <button
             //ref={this.simulateClick}
@@ -90,7 +93,10 @@ class Controls extends Component {
             className="btn btn-dark custom-width"
             style={this.state.btnSelected}
           >
-            17 <br></br> <span className="font-italic text-center">for-AI</span>
+            17 <br></br>{" "}
+            <span className="font-italic d-none d-sm-block text-center">
+              for-AI
+            </span>
           </button>
           <button
             onClick={this.handleClick}
@@ -98,7 +104,8 @@ class Controls extends Component {
             value="26"
             className="btn btn-danger custom-width"
           >
-            26 <br></br> <span className="font-italic">insane</span>
+            26 <br></br>{" "}
+            <span className="font-italic d-none d-sm-block">insane</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -106,7 +113,8 @@ class Controls extends Component {
             value="35"
             className="btn btn-warning custom-width"
           >
-            35 <br></br> <span className="font-italic">tough</span>
+            35 <br></br>{" "}
+            <span className="font-italic d-none d-sm-block">tough</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -114,7 +122,8 @@ class Controls extends Component {
             value="44"
             className="btn btn-primary custom-width"
           >
-            44 <br></br> <span className="font-italic">hard</span>
+            44 <br></br>{" "}
+            <span className="font-italic d-none d-sm-block">hard</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -122,7 +131,8 @@ class Controls extends Component {
             value="53"
             className="btn btn-info custom-width"
           >
-            53 <br></br> <span className="font-italic">medium</span>
+            53 <br></br>{" "}
+            <span className="font-italic d-none d-sm-block">medium</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -130,20 +140,13 @@ class Controls extends Component {
             value="62"
             className="btn btn-success custom-width"
           >
-            62 <br></br> <span className="font-italic">easy</span>
+            62 <br></br>{" "}
+            <span className="font-italic d-none d-sm-block">easy</span>
           </button>
         </div>
       </div>
     );
   }
 }
-
-export const puzzleBoard = Array.from(
-  "52...6.........7.13...........4..8..6......5...........418.........3..2...87....."
-).map(field => (field === "." ? (field = "") : (field = field * 1)));
-
-export const solvedBoard = Array.from(
-  "52...6.........7.13...........4..8..6......5...........418.........3..2...87....."
-).map(field => (field = field * 1));
 
 export default Controls;

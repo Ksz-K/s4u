@@ -1,8 +1,16 @@
 .field {
-  width: 3rem;
-  height: 3rem;
-  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
   text-align: center;
+}
+
+.nineXnine {
+  width: 18rem;
+}
+
+.scaled {
+  transform: scale(0.8);
 }
 .field[readonly] {
   background: #ccc;
@@ -16,9 +24,26 @@
 }
 
 .custom-width {
-  width: 78px !important;
+  width: 58px !important;
 }
 
 button span {
   pointer-events: none;
+}
+
+@media (min-width: 600px) {
+  .field {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .nineXnine {
+    width: 27rem;
+  }
+
+  .custom-width {
+    width: 78px !important;
+  }
 }
