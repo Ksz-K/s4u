@@ -7,8 +7,9 @@ class Controls extends Component {
     puzzleBoard: [],
     solvedBoard: []
   };
-  createRawPuzzle = () => sudoku.generate(this.state.gameLevel);
-
+  createRawPuzzle = () => {
+    sudoku.generate(this.state.gameLevel);
+  };
   handleClick = e => {
     let gameLevel = parseInt(e.target.value);
     const rawPuzzleBoard = sudoku.generate(gameLevel);
@@ -28,7 +29,6 @@ class Controls extends Component {
         solvedBoard
       },
       () => {
-        console.log(this.state.puzzleBoard);
         this.props.gameState(this.state.puzzleBoard, this.state.solvedBoard);
       }
     );
@@ -51,7 +51,6 @@ class Controls extends Component {
         solvedBoard
       },
       () => {
-        console.log(this.state.puzzleBoard);
         this.props.gameState(this.state.puzzleBoard, this.state.solvedBoard);
       }
     );
@@ -86,7 +85,6 @@ class Controls extends Component {
             <span className="font-italic d-none d-sm-block">Game Level</span>
           </button>
           <button
-            //ref={this.simulateClick}
             onClick={this.handleClick}
             type="button"
             value="17"

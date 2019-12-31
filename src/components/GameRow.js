@@ -3,15 +3,64 @@ import Spinner from "./Spinner";
 
 class GameRow extends Component {
   state = {
-    okey: { color: "#0f0" },
+    okey: { color: "#000" },
     notOkey: {
-      color: "#f00"
-    }
+      color: "#000"
+    },
+    solveit: false
+  };
+
+  changeColor = () => {
+    this.setState(
+      {
+        okey: { color: "#0f0" },
+        notOkey: {
+          color: "#f00"
+        }
+      },
+      () => setTimeout(this.restoreColor, 1234)
+    );
+  };
+
+  restoreColor = () => {
+    this.setState({
+      okey: { color: "#000" },
+      notOkey: {
+        color: "#000"
+      }
+    });
+  };
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (nextState.solveit === 2) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
+
+  solveIt = () => {
+    this.setState(
+      prevState => ({
+        solveit: true
+      }),
+      () => {
+        document.addEventListener("mousedown", this.reloadApp);
+      }
+    );
+  };
+
+  reloadApp = () => {
+    window.location.reload();
   };
   render() {
-    const { digitInputed, puzzleBoard, solvedBoard } = this.props;
-    if (puzzleBoard === null) {
+    const { digitInputed, solvedBoard, puzzleBoard } = this.props;
+
+    if (this.props.puzzleBoard === null) {
       return <Spinner />;
+    } else if (this.state.solveit) {
+      return solvedBoard.map((field, index) => (
+        <input className="field" key={index} value={field} readOnly={true} />
+      ));
     } else {
       return puzzleBoard.map((field, index) => (
         <input
@@ -23,7 +72,7 @@ class GameRow extends Component {
           style={
             (field == solvedBoard[index]) & (typeof field === "number")
               ? null
-              : (field == solvedBoard[index]) & (typeof field != "number")
+              : (field == solvedBoard[index]) & (typeof field !== "number")
               ? this.state.okey
               : this.state.notOkey
           }
