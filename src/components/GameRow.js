@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Spinner from "./Spinner";
+import WinnerBoard from "./WinnerBoard";
+import LoserBoard from "./LoserBoard";
 
 class GameRow extends Component {
   state = {
@@ -31,13 +33,6 @@ class GameRow extends Component {
     });
   };
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (nextState.solveit === 2) {
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
   solveIt = () => {
     this.setState(
       prevState => ({
@@ -52,6 +47,7 @@ class GameRow extends Component {
   reloadApp = () => {
     window.location.reload();
   };
+
   render() {
     const { digitInputed, solvedBoard, puzzleBoard } = this.props;
 
@@ -61,6 +57,28 @@ class GameRow extends Component {
       return solvedBoard.map((field, index) => (
         <input className="field" key={index} value={field} readOnly={true} />
       ));
+    } else if (puzzleBoard.toString() === solvedBoard.toString()) {
+      return solvedBoard.map((field, index) =>
+        index === 30 ? (
+          <Fragment>
+            <input className="field" key={"index"} />
+            <WinnerBoard></WinnerBoard>
+          </Fragment>
+        ) : (
+          <input className="field" key={index} value={field} readOnly={true} />
+        )
+      );
+    } else if (!puzzleBoard.includes("")) {
+      return puzzleBoard.map((field, index) =>
+        index === 30 ? (
+          <Fragment>
+            <input className="field" key={"index"} />
+            <LoserBoard></LoserBoard>
+          </Fragment>
+        ) : (
+          <input className="field" key={index} value={field} readOnly={true} />
+        )
+      );
     } else {
       return puzzleBoard.map((field, index) => (
         <input

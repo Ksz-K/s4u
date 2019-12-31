@@ -7,6 +7,7 @@
 
 .nineXnine {
   width: 18rem;
+  position: relative;
 }
 
 .scaled {
@@ -25,6 +26,24 @@
 
 .custom-width {
   width: 58px !important;
+}
+
+.success,
+.danger {
+  position: absolute;
+  text-align: center;
+  font-size: 2rem;
+  top: 28%;
+  left: 5%;
+  width: 90%;
+}
+
+.alert-success {
+  border: 3px solid #1b1;
+}
+
+.alert-danger {
+  border: 3px solid #f00;
 }
 
 .btn-hint {

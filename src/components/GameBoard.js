@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import GameRow from "./GameRow";
 import Buttons from "./Buttons";
+
 //import PropTypes from 'prop-types'
 
 class GameBoard extends Component {
@@ -20,6 +21,7 @@ class GameBoard extends Component {
   reloadApp = () => {
     this.gameRow.current.reloadApp();
   };
+
   render() {
     const { puzzleBoard, solvedBoard, digitInputed } = this.props;
     return (
