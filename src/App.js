@@ -34,7 +34,6 @@ class App extends Component {
   };
 
   undo = () => {
-    console.log(this.state.trackEntries);
     if (this.state.trackEntries.length) {
       const updateFromUndo = [...this.state.puzzleBoard];
       const updatePosition = this.state.trackEntries.pop();

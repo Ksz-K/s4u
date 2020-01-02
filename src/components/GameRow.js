@@ -58,6 +58,7 @@ class GameRow extends Component {
         <input className="field" key={index} value={field} readOnly={true} />
       ));
     } else if (puzzleBoard.toString() === solvedBoard.toString()) {
+      document.addEventListener("mousedown", this.reloadApp);
       return solvedBoard.map((field, index) =>
         index === 30 ? (
           <Fragment>
@@ -74,6 +75,7 @@ class GameRow extends Component {
         )
       );
     } else if (!puzzleBoard.includes("")) {
+      document.addEventListener("mousedown", this.reloadApp);
       return puzzleBoard.map((field, index) =>
         index === 30 ? (
           <Fragment>
