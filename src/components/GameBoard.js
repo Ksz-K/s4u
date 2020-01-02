@@ -23,7 +23,7 @@ class GameBoard extends Component {
   };
 
   render() {
-    const { puzzleBoard, solvedBoard, digitInputed } = this.props;
+    const { puzzleBoard, solvedBoard, digitInputed, undo } = this.props;
     return (
       <div className={"row align-content-around "}>
         <div className="col"></div>
@@ -37,6 +37,7 @@ class GameBoard extends Component {
           <Buttons
             digitColors={this.digitColors}
             solveIt={this.solveIt}
+            undo={undo}
             reloadApp={this.reloadApp}
           />
         </div>

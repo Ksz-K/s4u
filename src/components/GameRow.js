@@ -61,7 +61,12 @@ class GameRow extends Component {
       return solvedBoard.map((field, index) =>
         index === 30 ? (
           <Fragment>
-            <input className="field" key={"index"} />
+            <input
+              className="field"
+              key={index}
+              value={field}
+              readOnly={true}
+            />
             <WinnerBoard></WinnerBoard>
           </Fragment>
         ) : (
@@ -72,7 +77,12 @@ class GameRow extends Component {
       return puzzleBoard.map((field, index) =>
         index === 30 ? (
           <Fragment>
-            <input className="field" key={"index"} />
+            <input
+              className="field"
+              key={index}
+              value={field}
+              readOnly={true}
+            />
             <LoserBoard></LoserBoard>
           </Fragment>
         ) : (

@@ -135,7 +135,7 @@ class Controls extends Component {
           <button
             onClick={this.handleClick}
             type="button"
-            value="62"
+            value="80"
             className="btn btn-success custom-width"
           >
             62 <br></br>{" "}

@@ -60,6 +60,13 @@
   font-weight: bold;
 }
 
+.btn-undo {
+  background-color: #ad076d;
+  color: #fff;
+  margin: 10px;
+  font-weight: bold;
+}
+
 button span {
   pointer-events: none;
 }

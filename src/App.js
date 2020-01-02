@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       puzzleBoard: null,
-      solvedBoard: null
+      solvedBoard: null,
+      trackEntries: []
     };
   }
 
@@ -18,7 +19,10 @@ class App extends Component {
     if (value > 0 && value < 10) {
       const updateFromPlayer = [...this.state.puzzleBoard];
       updateFromPlayer[id] = value.toString();
-      this.setState({ puzzleBoard: updateFromPlayer });
+      this.setState({
+        puzzleBoard: updateFromPlayer,
+        trackEntries: [...this.state.trackEntries, id]
+      });
     }
   };
 
@@ -29,12 +33,24 @@ class App extends Component {
     });
   };
 
+  undo = () => {
+    console.log(this.state.trackEntries);
+    if (this.state.trackEntries.length) {
+      const updateFromUndo = [...this.state.puzzleBoard];
+      const updatePosition = this.state.trackEntries.pop();
+      updateFromUndo[updatePosition] = "";
+      this.setState({
+        puzzleBoard: updateFromUndo
+      });
+    }
+  };
   render() {
     return (
       <div className="container">
         <Header />
         <Controls gameState={this.fromControls} />
         <GameBoard
+          undo={this.undo}
           puzzleBoard={this.state.puzzleBoard}
           solvedBoard={this.state.solvedBoard}
           digitInputed={this.digitInputed}
