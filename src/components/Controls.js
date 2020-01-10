@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import sudoku from "sudoku-umd";
 
 class Controls extends Component {
@@ -72,7 +73,8 @@ class Controls extends Component {
             style={{ cursor: "default" }}
             disabled
           >
-            Digits to be shown ? <br></br>
+            Digits
+            <span className="d-none d-sm-block">to be shown ?</span>
             <span className="font-italic d-none d-sm-block">Game Level</span>
           </button>
           <button
@@ -83,7 +85,7 @@ class Controls extends Component {
             style={this.state.btnSelected}
           >
             17 <br></br>{" "}
-            <span className="font-italic d-none d-sm-block text-center">
+            <span className="font-italic d-none d-sm-block mt-3 text-center">
               for-AI
             </span>
           </button>
@@ -94,7 +96,7 @@ class Controls extends Component {
             className="btn btn-danger custom-width"
           >
             26 <br></br>{" "}
-            <span className="font-italic d-none d-sm-block">insane</span>
+            <span className="font-italic d-none d-sm-block mt-3">insane</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -103,7 +105,7 @@ class Controls extends Component {
             className="btn btn-warning custom-width"
           >
             35 <br></br>{" "}
-            <span className="font-italic d-none d-sm-block">tough</span>
+            <span className="font-italic d-none d-sm-block mt-3">tough</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -112,7 +114,7 @@ class Controls extends Component {
             className="btn btn-primary custom-width"
           >
             44 <br></br>{" "}
-            <span className="font-italic d-none d-sm-block">hard</span>
+            <span className="font-italic d-none d-sm-block mt-3">hard</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -121,7 +123,7 @@ class Controls extends Component {
             className="btn btn-info custom-width"
           >
             53 <br></br>{" "}
-            <span className="font-italic d-none d-sm-block">medium</span>
+            <span className="font-italic d-none d-sm-block mt-3">medium</span>
           </button>
           <button
             onClick={this.handleClick}
@@ -130,12 +132,16 @@ class Controls extends Component {
             className="btn btn-success custom-width"
           >
             62 <br></br>{" "}
-            <span className="font-italic d-none d-sm-block">easy</span>
+            <span className="font-italic d-none d-sm-block mt-3">easy</span>
           </button>
         </div>
       </div>
     );
   }
 }
+
+Controls.propTypes = {
+  gameState: PropTypes.func.isRequired
+};
 
 export default Controls;

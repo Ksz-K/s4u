@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import Spinner from "./Spinner";
 import WinnerBoard from "./WinnerBoard";
 import LoserBoard from "./LoserBoard";
@@ -114,5 +115,11 @@ class GameRow extends Component {
     }
   }
 }
+
+GameRow.propTypes = {
+  puzzleBoard: PropTypes.array,
+  solvedBoard: PropTypes.array,
+  digitInputed: PropTypes.func
+};
 
 export default GameRow;

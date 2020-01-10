@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Buttons extends Component {
   render() {
@@ -21,5 +22,12 @@ class Buttons extends Component {
     );
   }
 }
+
+Buttons.propTypes = {
+  digitColors: PropTypes.func.isRequired,
+  solveIt: PropTypes.func.isRequired,
+  reloadApp: PropTypes.func.isRequired,
+  undo: PropTypes.func
+};
 
 export default Buttons;

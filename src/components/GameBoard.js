@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import GameRow from "./GameRow";
 import Buttons from "./Buttons";
 
@@ -46,5 +47,10 @@ class GameBoard extends Component {
     );
   }
 }
-
+GameBoard.propTypes = {
+  puzzleBoard: PropTypes.array,
+  solvedBoard: PropTypes.array,
+  digitInputed: PropTypes.func,
+  undo: PropTypes.func.isRequired
+};
 export default GameBoard;
