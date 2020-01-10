@@ -61,7 +61,7 @@ class GameRow extends Component {
       document.addEventListener("mousedown", this.reloadApp);
       return solvedBoard.map((field, index) =>
         index === 30 ? (
-          <Fragment>
+          <Fragment key="winInfo">
             <input
               className="field"
               key={index}
@@ -78,7 +78,7 @@ class GameRow extends Component {
       document.addEventListener("mousedown", this.reloadApp);
       return puzzleBoard.map((field, index) =>
         index === 30 ? (
-          <Fragment>
+          <Fragment key="loseInfo">
             <input
               className="field"
               key={index}
@@ -100,9 +100,11 @@ class GameRow extends Component {
           value={field}
           readOnly={(field > 0) & (typeof field === "number") ? true : false}
           style={
+            // eslint-disable-next-line
             (field == solvedBoard[index]) & (typeof field === "number")
               ? null
-              : (field == solvedBoard[index]) & (typeof field !== "number")
+              : // eslint-disable-next-line
+              (field == solvedBoard[index]) & (typeof field !== "number")
               ? this.state.okey
               : this.state.notOkey
           }

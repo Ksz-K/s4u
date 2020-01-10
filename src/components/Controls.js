@@ -55,16 +55,7 @@ class Controls extends Component {
       }
     );
   };
-  //   simulateClick = e => {
-  //     e.dispatchEvent(
-  //       new MouseEvent("click", {
-  //         view: window,
-  //         bubbles: true,
-  //         cancelable: true,
-  //         buttons: 1
-  //       })
-  //     );
-  //   };
+
   componentDidMount() {
     this.getData();
   }
@@ -135,7 +126,7 @@ class Controls extends Component {
           <button
             onClick={this.handleClick}
             type="button"
-            value="80"
+            value="62"
             className="btn btn-success custom-width"
           >
             62 <br></br>{" "}
